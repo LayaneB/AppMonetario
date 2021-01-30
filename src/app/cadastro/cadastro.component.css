@@ -1,8 +1,8 @@
 .tela-cadastro{
-    width: 100vw;
-height: 100vh;
-background: #6C7A89;
-display: flex;
-justify-content: center;
-align-items: center
+  align-items: center;
+ max-width: 400px;
+ text-align: center;
+ position: absolute;
+ width:100%;
+
 }
