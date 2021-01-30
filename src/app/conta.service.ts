@@ -1,11 +1,15 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContaService {
-
+ httpOptions={
+   headers: new HttpHeaders({
+     Autorization:'token de autorização'
+   })
+ }
   constructor(
     private http: HttpClient
     ) { }
@@ -28,6 +32,8 @@ export class ContaService {
     }
 
     createUsuario(id:string, usuario){
+  
+      
       return this.http.post(' http://localhost:3000/contas',usuario);
 
     }

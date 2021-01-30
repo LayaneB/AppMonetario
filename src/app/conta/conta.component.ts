@@ -11,10 +11,13 @@ export class ContaComponent implements OnInit {
 
    conta =[];
    usuario=[];
+   usuarioCriado=[
+
+   ];
 
    str:string;
   constructor(
-    private contas:ContaService
+    private http:ContaService
   ) { }
 
   ngOnInit() {
@@ -22,11 +25,13 @@ export class ContaComponent implements OnInit {
  }
 
  getUsuarios(){
-  this.contas.getUsuarios()
+  this.http.getUsuarios()
   .subscribe(response =>{
-    this.conta.push(response);
-    console.log(this.conta);
+    this.usuario.push(response);
+    console.log(this.usuario);
   })
  }
 
+
+ 
 }
