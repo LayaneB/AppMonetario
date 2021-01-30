@@ -1,0 +1,18 @@
+{
+    "usuario":[
+        {
+            "nome":"Kelly",
+            "email":"18kellycarvalho@gmail.com",
+            "senha":"234567",
+            "cpf":"66768767878",
+            "id":1
+        }
+    ],
+   "contas": [
+       {
+           "saldo":29009,
+           "idUsuario":1,
+           "id":1
+       }
+   ]
+}
