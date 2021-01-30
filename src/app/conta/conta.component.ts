@@ -15,7 +15,8 @@ export class ContaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-this.conta.push(this.contas.getTransacoes())
+this.conta.push(this.contas.getTransacoes());
+console.log(this.conta);
   }
 
 }

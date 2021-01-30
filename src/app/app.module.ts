@@ -8,7 +8,8 @@ import { ContaComponent } from './conta/conta.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ContaComponent
+    ContaComponent,
+    
   ],
   imports: [
     BrowserModule,
