@@ -5,12 +5,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ContaService {
-//contas =[];
+
   constructor(
     private http: HttpClient
     ) { }
 
-    getTransacoes(){
-      return this.http.get('./db.json');
+    getUsuarios(){
+      return this.http.get(' http://localhost:3000/usuario');
+    }
+    getConta(){
+      return this.http.get(' http://localhost:3000/contas');
+
     }
 }

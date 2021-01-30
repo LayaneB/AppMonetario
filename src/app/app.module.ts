@@ -4,15 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ContaComponent } from './conta/conta.component';
-
+import{AppRoutingModule} from './app-routing/app-routing.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ContaComponent
+    ContaComponent,
+    
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,12 +10,19 @@ import { ContaService } from '../conta.service';
 export class ContaComponent implements OnInit {
 
    conta =[];
+   str:string;
   constructor(
     private contas:ContaService
   ) { }
 
   ngOnInit() {
-this.conta.push(this.contas.getTransacoes())
+this.contas.getUsuarios()
+.subscribe(response =>{
+  
+  console.log(response);
+})
+
+
   }
 
 }
