@@ -16,6 +16,7 @@ export class ContaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+<<<<<<< HEAD
 this.contas.getUsuarios()
 .subscribe(response =>{
   
@@ -23,6 +24,10 @@ this.contas.getUsuarios()
 })
 
 
+=======
+this.conta.push(this.contas.getTransacoes());
+console.log(this.conta);
+>>>>>>> 9d25ea3ec00efbf3544fdba6768ef5716a3d6cde
   }
 
 }
