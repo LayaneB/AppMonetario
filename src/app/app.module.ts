@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { ContaComponent } from './conta/conta.component';
 import{AppRoutingModule} from './app-routing/app-routing.component';
 import { FormsModule } from '@angular/forms';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 @NgModule({
   declarations: [
     AppComponent,
     ContaComponent,
+    CadastroUsuarioComponent,
+    UsuarioComponent,
     
   ],
   imports: [
