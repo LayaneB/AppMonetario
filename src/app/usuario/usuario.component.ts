@@ -32,10 +32,13 @@ page=1;
   }
   prev(){
     this.page=this.page-1;
+    this.getUsuarios();
 
   }
   next(){
     this.page=this.page+1;
+    this.getUsuarios();
+
 
   }
 

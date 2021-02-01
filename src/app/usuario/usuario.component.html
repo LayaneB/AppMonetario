@@ -3,8 +3,12 @@
     <span class="visually-hidden">Loading...</span>
     <button (click)="getUsuarios()" >Tentar Novamente</button>
   </div>
-  <button (click)="prev()" >Página Anterior</button>
-  <button (click)="next()" >Próxima Página</button>
+  <div *ngIf="!loading && !errorOnLoading">
+    <p>Pagina Atual: {{page}}</p>
+    <button [disabled]="page===1" (click)="prev()" >Página Anterior</button>
+    <button (click)="next()" >Próxima Página</button>
+  </div>
+
 
 
   <h2 *ngIf="errorOnLoading" >Desculpa te decepcionar, mas ocorreu um erro :(</h2>
