@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { error } from 'protractor';
 import { finalize, take } from 'rxjs/operators';
 import { ContaService } from '../conta.service';
 import { Conta } from './conta.interfaces';
@@ -67,13 +68,24 @@ next(){
 }
 onSuccess(response:Conta[]) {
 this.conta=response;
-console.log(response);
+console.log(response[0].id);
+
 }
 
 goToDetails(idConta:string){
   this.route.navigate([`conta/${idConta}`])
 }
+deletar(id){
+  console.log(id);
+this.http.deleteConta(id)
+  .subscribe(
+    response => this.onSuccessDelete(id),
+    error => this.onError(error),
+  )
+}
 
-
+onSuccessDelete(id){
+  alert("apagado com sucesso! Mas a API é fake :(  ");
+}
  
 }

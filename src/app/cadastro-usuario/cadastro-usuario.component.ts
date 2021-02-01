@@ -42,7 +42,7 @@ this.loading=false;
   }
   OnSuccess(response: Usuario){
     this.novoUsuario=response;
-    console.log('Tudo certo!',this.novoUsuario);
+    alert('Tudo certo! '+this.novoUsuario.nome);
     this.router.navigate(['usuario']);
   }
 onSuccessDelete(id){

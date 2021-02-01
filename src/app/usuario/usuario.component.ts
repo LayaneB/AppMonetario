@@ -76,6 +76,8 @@ export class UsuarioComponent implements OnInit {
         
   }
   onSuccess(response:Usuario[]) {
+
+  
     this.usuario=response;
   }
 
@@ -93,7 +95,7 @@ export class UsuarioComponent implements OnInit {
     )
   }
   onSuccessDelete(id){
-    console.log("apagado com sucesso!: "+id);
+    alert("apagado com sucesso!: Mas a API é fake :( "+id);
   }
   OnError(error: any){
     console.log(error);
