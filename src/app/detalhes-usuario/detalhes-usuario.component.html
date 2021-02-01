@@ -1,11 +1,9 @@
 <h1 class="text-center">Informações do usuário </h1>
-<div *ngIf="loading" class="spinner-border m-5" role="status">
+<div *ngIf="loading" class="spinner-border m-5" role="status" class="text-center" >
   <div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
-    <button (click)="getUsuario()" >Tentar Novamente</button>
-  </div>
-
+</div>
 
 <div class="text-center container-sm bg-dark text-white">
   
@@ -19,7 +17,7 @@
 <br> 
 <div class="btn-group pagination justify-content-center " role="group">
   <button type="button" class="btn btn-dark" type="submit" >Transferir</button>
-  <button type="button" class="btn btn-dark" type="submit" (click)="onClick(usuario.id)">Voltar</button>
+  <button type="" class="btn btn-dark"  (click)="onClick()">Voltar</button>
 </div>
 
 

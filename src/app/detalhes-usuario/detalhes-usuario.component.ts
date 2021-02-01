@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -18,6 +19,7 @@ onErrorLoading:boolean;
 
     private route:ActivatedRoute,
     private http:UsuarioService,
+    private location:Location
   ) { }
 
   ngOnInit() {
@@ -47,11 +49,8 @@ onErrorLoading:boolean;
 
   }
   
-  onClick(UsuarioId) {
-    return {
-      path: `usuario/${UsuarioId}`, redirectTo: 'usuario', patchMath:'full'
-    
-    }
+  onClick() {
+    this.location.back();
   }
   
   
