@@ -1,9 +1,11 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import{RouterModule,Routes} from '@angular/router';
+import { CadastroUsuarioComponent } from '../cadastro-usuario/cadastro-usuario.component';
 import { ContaComponent } from '../conta/conta.component';
 import { DetalhesContaComponent } from '../detalhes-conta/detalhes-conta.component';
 import { DetalhesUsuarioComponent } from '../detalhes-usuario/detalhes-usuario.component';
 import { HomeComponent } from '../home/home.component';
+import { LoginComponent } from '../login/login.component';
 import { UsuarioComponent } from '../usuario/usuario.component';
 
 const routes:Routes =[
@@ -24,6 +26,12 @@ const routes:Routes =[
   path:'conta/:id',
   component:DetalhesContaComponent
 
+},{
+  path:'login',
+  component:LoginComponent
+},{
+  path:'cadastrar',
+  component:CadastroUsuarioComponent
 }
 
 ]

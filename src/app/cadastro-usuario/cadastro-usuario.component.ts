@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { error } from 'protractor';
+import { finalize, take } from 'rxjs/operators';
+import { UsuarioService } from '../usuario.service';
+import { Usuario } from '../usuario/usuario.interfaces';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -7,10 +11,36 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class CadastroUsuarioComponent implements OnInit {
+loading:boolean;
+novoUsuario:Usuario;
+  constructor(
+    private http:UsuarioService
+  ) { }
 
-  constructor() { }
+  ngOnInit() {
+  }
 
-  ngOnInit(): void {
+  addUsuario(usuario:Usuario){
+    this.http.createUsuario(usuario)
+    .pipe(
+      take(1),
+      finalize(()=>{
+this.loading=false;
+      })
+
+    )
+    .subscribe(
+      response => this.OnSuccess(response),
+      error => this.OnError(error),
+    );
+
+  }
+  OnError(error: any){
+    console.log(error);
+  }
+  OnSuccess(response: Usuario){
+    this.novoUsuario=response;
+    console.log(this.novoUsuario);
   }
 
 }

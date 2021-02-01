@@ -1,1 +1,16 @@
-<p>cadastro-usuario works!</p>
+
+
+<div>
+    <form #form="ngForm" (ngSubmit)="addUsuario(form)" >
+        <h1>Login</h1>
+        <input type="text" placeholder="Nome" name="nome" ngModel>
+        <input type="text" placeholder="E-mail" name="email" ngModel>
+        <input placeholder="senha" type="password" name="senha" ngModel>
+        <input type="text" placeholder="CPF" name="cpf" ngModel>
+        <button type="submit" >Entrar</button>
+
+    </form>
+
+   
+    
+</div>
