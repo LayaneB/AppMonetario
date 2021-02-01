@@ -1,11 +1,31 @@
-<h1>Informações</h1>
+<h1 class="text-center">Informações do usuário </h1>
 <div *ngIf="loading" class="spinner-border m-5" role="status">
+  <div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
+  </div>
     <button (click)="getUsuario()" >Tentar Novamente</button>
   </div>
-<div>
-    <div>Usuário: {{usuario.nome}}</div>
- 
-    <div> {{usuario.cpf}} </div>
-    <div> {{usuario.email}} </div>
+
+
+<div class="text-center container-sm bg-dark text-white">
+  
+  <div class="p-2 bd-highlight">Nome Completo: {{usuario.nome}}</div> 
+  <div class="p-2 bd-highlight">Nick: {{usuario.nick}}</div>  
+  <div class="p-2 bd-highlight">CPF: {{usuario.cpf}}  </div> 
+  <div class="p-2 bd-highlight">e-mail: {{usuario.email}} </div>  
+  <div class="p-2 bd-highlight">Saldo: {{usuario.saldo}},00</div> 
+  
 </div>
+<br> 
+<div class="btn-group pagination justify-content-center " role="group">
+  <button type="button" class="btn btn-dark" type="submit" >Transferir</button>
+  <button type="button" class="btn btn-dark" type="submit" (click)="onClick(usuario.id)">Voltar</button>
+</div>
+
+
+
+
+ 
+  
+
+

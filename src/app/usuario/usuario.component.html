@@ -1,34 +1,37 @@
 
-<div *ngIf="loading" class="spinner-border m-5" role="status">
-    <span class="visually-hidden">Loading...</span>
-    <button (click)="getUsuarios()" >Tentar Novamente</button>
+  <div *ngIf="loading" class="spinner-border m-5 center" role="status">
+      <span class="visually-hidden">Carregando...</span>
+      <button (click)="getUsuarios()" >Tentar Novamente</button>
   </div>
-  <div *ngIf="!loading && !errorOnLoading">
-    <p>Pagina Atual: {{page}}</p>
-    <button [disabled]="page===1" (click)="prev()" >Página Anterior</button>
-    <button (click)="next()" >Próxima Página</button>
-  </div>
-
-
-
   <h2 *ngIf="errorOnLoading" >Desculpa te decepcionar, mas ocorreu um erro :(</h2>
-  <table *ngIf="!loading && !errorOnLoading" >
-      <tr>
-          <th>ID</th>
-          <th>NOME</th>
-          <th>CPF</th>
-          <th>AÇÕES</th>
-
+  <table *ngIf="!loading && !errorOnLoading" class="table">
+    <thead class="thead-dark">
+      <tr class="text-center">
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">e-mail</th>
+        <th scope="col">Detalhes</th>
+        <th scope="col">Excluir</th>
       </tr>
-      <tr *ngFor="let usuarios of usuario">
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuarios of usuario" class="text-center">
         <td>{{usuarios.id}}</td>
-        <td>{{usuarios.nome}}</td>
+        <td>{{usuarios.nick}}</td>
         <td> {{usuarios.cpf}} </td>
         <td> {{usuarios.email}} </td>
-        <td><button (click)="goToDetails(usuarios.id)" >Ver Detalhes</button></td>
-        <td><button (click)="deletar(usuarios.id)" >Apagar</button></td>
-      </tr>
-      
+        <td><button (click)="goToDetails(usuarios.id)" class="btn btn-outline-dark">Ver Detalhes</button></td>
+        <td><button (click)="deletar(usuarios.id)" class="btn btn-outline-danger">Apagar</button></td>
+      </tr>  
   </table>
 
+  <div *ngIf="!loading && !errorOnLoading" class="btn-group pagination justify-content-center " role="group" >
+    <nav >
+      <ul>
+        <button [disabled]="page===1" (click)="prev()" class="btn btn-outline-dark">Página Anterior</button>
+        <button (click)="next()" class="btn btn-outline-dark">Próxima Página</button>
+      </ul>
+    </nav>
+  </div>
 

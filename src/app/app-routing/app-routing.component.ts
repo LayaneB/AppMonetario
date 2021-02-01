@@ -1,5 +1,6 @@
-import { Component, NgModule, OnInit } from '@angular/core';
-import{RouterModule,Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
 import { CadastroUsuarioComponent } from '../cadastro-usuario/cadastro-usuario.component';
 import { ContaComponent } from '../conta/conta.component';
 import { DetalhesContaComponent } from '../detalhes-conta/detalhes-conta.component';
@@ -27,7 +28,7 @@ const routes:Routes =[
   component:DetalhesContaComponent
 
 },{
-  path:'login',
+  path:'Login',
   component:LoginComponent
 },{
   path:'cadastrar',
