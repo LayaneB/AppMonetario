@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { finalize, take } from 'rxjs/operators';
+
 import { UsuarioService } from '../usuario.service';
 import { Usuario } from './usuario.interfaces';
-import{finalize, mergeMap, take} from 'rxjs/operators';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuario',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 export class UsuarioComponent implements OnInit {
 
   usuario: Array<Usuario>
-page=1;
+  page=1;
   loading:boolean;
   errorOnLoading:boolean;
 
@@ -75,7 +76,7 @@ page=1;
         
   }
   onSuccess(response:Usuario[]) {
-this.usuario=response;
+    this.usuario=response;
   }
 
   goToDetails(idUsuario:string){

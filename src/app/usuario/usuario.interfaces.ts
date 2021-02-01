@@ -1,9 +1,11 @@
  export interface Usuario
     {
-        id:number,
         nome:string,
-        cpf:string,
+        nick:string,  
+        email:string,
         senha:string,
-        email:string
+        cpf:string
+        saldo:number,
+        id:number
       };
 

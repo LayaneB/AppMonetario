@@ -1,13 +1,44 @@
+<br><br><br><br><br><br><br>
+<h1 class="text-center">Acesse sua conta</h1>
+<br><br><br><br><br>
+<div class= "container">
+  
+  <div classe="box-form" >
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    
+      
+        <div>
+          <p *ngIf="exibeErro('email', form)" class="text-center text-danger"> E-mail inválido </p>
+            <input
+            class="inputLogin"
+             type="email" class="form-control" 
+             placeholder = "E-mail" name ="email" 
+             type="text" class="form-control" id="formGroupExampleInput"
+             [(ngModel)]="email" email required
+             [class.is-invalid]="exibeErro('email',form)" #emailInput>
+             
+        </div>
+        <br>
+        <div>
+            <p *ngIf="exibeErro('password', form)" class="text-center text-danger password">Senha inválida </p>
+            <input 
+            class =" inputLogin"
+            type="password" class= "form-control" 
+            placeholder= "Senha" name="password" 
+            class="form-control" id="formGroupExampleInput"
+            [(ngModel)]="password" required
+            [class.is-invalid]="exibeErro('password',form)" #Input>
+            
+           
+        </div>
+        <br><br>
 
-<div>
-    <form #form="ngForm" (ngSubmit)="OnSubmit(form)" >
-        <h1>Login</h1>
-        <input type="text" placeholder="E-mail" name="email" ngModel>
-        <input placeholder="senha" type="password" name="senha" ngModel>
-        <button type="submit" >Entrar</button>
-
+        <div class="text-center">
+            <button type="button" class="btn btn-dark" type="submit" >Entrar</button>
+        </div>
     </form>
 
-   
+  </div>
     
 </div>
+

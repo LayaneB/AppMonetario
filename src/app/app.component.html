@@ -1,32 +1,22 @@
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="conta">Conta</a>
-
-  
-   
-  </div>
-  
-  <br>
-  <div class="container-fluid">
-  
-    <a class="navbar-brand" routerLink="usuario">Usuarios</a>
-  
-   
-  </div>
-  <div class="container-fluid">
-  
-    <a class="navbar-brand" routerLink="login">Login</a>
-  
-   
-  </div>
-  <div class="container-fluid">
-  
-    <a class="navbar-brand" routerLink="cadastrar">Cadastrar</a>
-  
-   
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">DarkBank</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cadastrar">Cadastrar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Login">Login</a>
+      </li>
+    </ul>
   </div>
 </nav>
+
 <router-outlet></router-outlet>
 

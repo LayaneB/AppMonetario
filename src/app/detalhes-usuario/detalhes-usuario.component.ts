@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
 import { UsuarioService } from '../usuario.service';
 import { Usuario } from '../usuario/usuario.interfaces';
 
@@ -9,13 +10,14 @@ import { Usuario } from '../usuario/usuario.interfaces';
   styleUrls: ['./detalhes-usuario.component.css']
 })
 export class DetalhesUsuarioComponent implements OnInit {
+  [x: string]: any;
 usuario:Usuario;
 loading:boolean;
 onErrorLoading:boolean;
   constructor(
 
     private route:ActivatedRoute,
-    private http:UsuarioService
+    private http:UsuarioService,
   ) { }
 
   ngOnInit() {
@@ -44,6 +46,15 @@ onErrorLoading:boolean;
   onError(error: any) {
 
   }
+  
+  onClick(UsuarioId) {
+    return {
+      path: `usuario/${UsuarioId}`, redirectTo: 'usuario', patchMath:'full'
+    
+    }
+  }
+  
+  
 
   
 }
