@@ -11,7 +11,7 @@ import{finalize, mergeMap, take} from 'rxjs/operators';
 export class UsuarioComponent implements OnInit {
 
   usuario: Array<Usuario>
-
+page=1;
   loading:boolean;
   errorOnLoading:boolean;
 
@@ -30,18 +30,25 @@ export class UsuarioComponent implements OnInit {
     this.getUsuarios();
 
   }
+  prev(){
+    this.page=this.page-1;
 
+  }
+  next(){
+    this.page=this.page+1;
+
+  }
 
  getUsuarios(){
 
 
     this.loading=true;
     this.errorOnLoading=false;
-    const page=1;
+    
 
    
   
-  this.http.getUsuarios(page)
+  this.http.getUsuarios(this.page)
   .pipe(
     take(1),
     finalize(()=>{
@@ -65,4 +72,6 @@ export class UsuarioComponent implements OnInit {
   onSuccess(response:Usuario[]) {
 this.usuario=response;
   }
+
+
 }
