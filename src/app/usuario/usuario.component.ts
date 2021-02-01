@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
 import { Usuario } from './usuario.interfaces';
+import{finalize, mergeMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-usuario',
@@ -40,6 +41,12 @@ export class UsuarioComponent implements OnInit {
    
   
   this.http.getUsuarios()
+  .pipe(
+    finalize(()=>{
+      this.loading=false;
+
+    })
+  )
   .subscribe(
     response => this.onSuccess(response),
     error=>this.onError(error),
@@ -48,13 +55,11 @@ export class UsuarioComponent implements OnInit {
   onError(error:any) {
     
       this.errorOnLoading=true;
-      this.loading=false;
       console.log(error);
   
         
   }
   onSuccess(response:Usuario[]) {
-this.loading=false;
 this.usuario=response;
   }
 }
