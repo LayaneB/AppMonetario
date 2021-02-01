@@ -13,7 +13,7 @@ export class UsuarioService {
     private http: HttpClient
 
   ) { }
-  getUsuarios(){
+  getUsuarios(page:number){
   /* const error = throwError('Error Normal');
    return timer(3000).pipe(mergeMap(()=>error)); */
    

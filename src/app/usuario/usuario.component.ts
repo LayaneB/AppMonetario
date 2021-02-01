@@ -37,10 +37,11 @@ export class UsuarioComponent implements OnInit {
 
     this.loading=true;
     this.errorOnLoading=false;
+    const page=1;
 
    
   
-  this.http.getUsuarios()
+  this.http.getUsuarios(page)
   .pipe(
     take(1),
     finalize(()=>{
