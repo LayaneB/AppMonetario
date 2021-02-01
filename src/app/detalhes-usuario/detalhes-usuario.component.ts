@@ -10,6 +10,8 @@ import { Usuario } from '../usuario/usuario.interfaces';
 })
 export class DetalhesUsuarioComponent implements OnInit {
 usuario:Array<Usuario>
+loading:boolean;
+onErrorLoading:boolean;
   constructor(
 
     private route:ActivatedRoute,
@@ -26,11 +28,19 @@ usuario:Array<Usuario>
   getUsuario(idUsuario){
 
     this.http.getUsuario(idUsuario)
-    .subscribe(response=>{
-this.usuario=response;
-console.log(this.usuario);
-    })
+    .subscribe(
+     response =>this.onSucess(response),
+     error => this.onError(error)
     
+    
+    )
+  }
+  onSucess(response: Usuario) {
+    
+  }
+  onError(error: any) {
 
   }
+
+  
 }
