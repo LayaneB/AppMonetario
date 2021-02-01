@@ -104,13 +104,8 @@ export class UsuarioComponent implements OnInit {
     console.log(error);
   }
 
-<<<<<<< HEAD
   retornarLista(usuario){
 this.usuarios.push(this.usuario);
 console.log(this.usuarios);
-=======
-  onClick() {
-    this.location.back();
->>>>>>> 685328a91c615f1ca464698c20d2d459a918bd4c
   }
 }
