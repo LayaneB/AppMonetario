@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { HomeComponent } from './home/home.component';
+import { DetalhesUsuarioComponent } from './detalhes-usuario/detalhes-usuario.component';
+import { DetalhesContaComponent } from './detalhes-conta/detalhes-conta.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +18,8 @@ import { HomeComponent } from './home/home.component';
     CadastroUsuarioComponent,
     UsuarioComponent,
     HomeComponent,
+    DetalhesUsuarioComponent,
+    DetalhesContaComponent,
     
   ],
   imports: [
