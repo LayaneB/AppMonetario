@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { error } from 'protractor';
 import { finalize, take } from 'rxjs/operators';
 import { UsuarioService } from '../usuario.service';
@@ -14,7 +15,8 @@ export class CadastroUsuarioComponent implements OnInit {
 loading:boolean;
 novoUsuario:Usuario;
   constructor(
-    private http:UsuarioService
+    private http:UsuarioService,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -40,7 +42,8 @@ this.loading=false;
   }
   OnSuccess(response: Usuario){
     this.novoUsuario=response;
-    console.log(this.novoUsuario);
+    console.log('Tudo certo!',this.novoUsuario);
+    this.router.navigate(['usuario']);
   }
 
 }

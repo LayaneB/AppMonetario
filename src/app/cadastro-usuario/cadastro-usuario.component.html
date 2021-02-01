@@ -1,7 +1,7 @@
 
 
 <div>
-    <form #form="ngForm" (ngSubmit)="addUsuario(form)" >
+    <form #form="ngForm" (ngSubmit)="addUsuario(form.value)" >
         <h1>Login</h1>
         <input type="text" placeholder="Nome" name="nome" ngModel>
         <input type="text" placeholder="E-mail" name="email" ngModel>
