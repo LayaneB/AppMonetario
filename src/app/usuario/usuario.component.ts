@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
@@ -24,7 +25,8 @@ export class UsuarioComponent implements OnInit {
   
   constructor(
     private http:UsuarioService,
-    private router:Router
+    private router:Router,
+    private location:Location
     ) {
 
      }
@@ -97,5 +99,9 @@ export class UsuarioComponent implements OnInit {
   }
   OnError(error: any){
     console.log(error);
+  }
+
+  onClick() {
+    this.location.back();
   }
 }
