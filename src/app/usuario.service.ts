@@ -24,6 +24,13 @@ export class UsuarioService {
       }
     });
   }
+  getUsuario(id:number){
+    /* const error = throwError('Error Normal');
+     return timer(3000).pipe(mergeMap(()=>error)); */
+     
+  
+      return this.http.get<Usuario[]>('https://my-json-server.typicode.com/KellYCarvalho/apiFake/usuario/'+id);
 
+    }
 
 }

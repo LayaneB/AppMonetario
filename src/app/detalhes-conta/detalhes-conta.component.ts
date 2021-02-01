@@ -20,7 +20,7 @@ export class DetalhesContaComponent implements OnInit {
 
   getParametros(){
     const idConta = this.route.snapshot.paramMap.get('id');
-    console.log("Estou mostrando um parametro"+idConta);
+    
   }
 
 }

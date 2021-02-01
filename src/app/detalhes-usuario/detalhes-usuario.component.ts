@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from '../usuario.service';
+import { Usuario } from '../usuario/usuario.interfaces';
 
 @Component({
   selector: 'app-detalhes-usuario',
@@ -7,10 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./detalhes-usuario.component.css']
 })
 export class DetalhesUsuarioComponent implements OnInit {
-
+usuario:Array<Usuario>
   constructor(
 
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private http:UsuarioService
   ) { }
 
   ngOnInit() {
@@ -18,7 +21,16 @@ export class DetalhesUsuarioComponent implements OnInit {
   }
   getParametros(){
     const idUsuario = this.route.snapshot.paramMap.get('id');
-    console.log("Estou mostrando um parametro: "+idUsuario);
+    this.getUsuario(idUsuario);
   }
+  getUsuario(idUsuario){
 
+    this.http.getUsuario(idUsuario)
+    .subscribe(response=>{
+this.usuario=response;
+console.log(this.usuario);
+    })
+    
+
+  }
 }
