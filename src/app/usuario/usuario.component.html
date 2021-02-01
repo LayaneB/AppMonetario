@@ -1,8 +1,11 @@
 
-  <div *ngIf="loading" class="spinner-border m-5 center" role="status">
-      <span class="visually-hidden">Carregando...</span>
-      <button (click)="getUsuarios()" >Tentar Novamente</button>
+<div *ngIf="loading" class="spinner-border m-5" role="status" >
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div class="spinner-border text-center" role="status">
+    <span class="visually-hidden">Loading...</span>
   </div>
+</div>
+
   <h2 *ngIf="errorOnLoading" >Desculpa te decepcionar, mas ocorreu um erro :(</h2>
   <table *ngIf="!loading && !errorOnLoading" class="table">
     <thead class="thead-dark">
@@ -32,6 +35,12 @@
         <button [disabled]="page===1" (click)="prev()" class="btn btn-outline-dark">Página Anterior</button>
         <button (click)="next()" class="btn btn-outline-dark">Próxima Página</button>
       </ul>
+      
     </nav>
+    <ul><button (click)="onClick()" class="btn btn-outline-danger ">Sair</button></ul>
+      
   </div>
+
+
+    
 
