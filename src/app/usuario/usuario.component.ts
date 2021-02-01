@@ -13,6 +13,7 @@ import { Usuario } from './usuario.interfaces';
 export class UsuarioComponent implements OnInit {
 
   usuario: Array<Usuario>
+  usuarios=[];
   page=1;
   loading:boolean;
   errorOnLoading:boolean;
@@ -76,9 +77,9 @@ export class UsuarioComponent implements OnInit {
         
   }
   onSuccess(response:Usuario[]) {
-
-  
+ 
     this.usuario=response;
+    this.retornarLista(this.usuario);
   }
 
   goToDetails(idUsuario:string){
@@ -99,5 +100,10 @@ export class UsuarioComponent implements OnInit {
   }
   OnError(error: any){
     console.log(error);
+  }
+
+  retornarLista(usuario){
+this.usuarios.push(this.usuario);
+console.log(this.usuarios);
   }
 }

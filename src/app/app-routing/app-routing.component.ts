@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastroContaComponent } from '../cadastro-conta/cadastro-conta.component';
 
 import { CadastroUsuarioComponent } from '../cadastro-usuario/cadastro-usuario.component';
 import { ContaComponent } from '../conta/conta.component';
@@ -33,6 +34,9 @@ const routes:Routes =[
 },{
   path:'cadastrar',
   component:CadastroUsuarioComponent
+},{
+  path:'cadastrar-conta',
+  component:CadastroContaComponent
 }
 
 ]
