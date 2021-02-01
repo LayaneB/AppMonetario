@@ -40,13 +40,21 @@ export class UsuarioComponent implements OnInit {
    
   
   this.http.getUsuarios()
-  .subscribe(response =>{
- 
-      this.usuario=response;
-      this.loading=false
-  },error=>{
-this.errorOnLoading=true;
-this.loading=false;
-  })
+  .subscribe(
+    response => this.onSuccess(response),
+    error=>this.onError(error),
+    );
  }
+  onError(error:any) {
+    
+      this.errorOnLoading=true;
+      this.loading=false;
+      console.log(error);
+  
+        
+  }
+  onSuccess(response:Usuario[]) {
+this.loading=false;
+this.usuario=response;
+  }
 }
