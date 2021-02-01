@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
+import { throwError, timer } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 import { Usuario } from './usuario/usuario.interfaces';
 
 @Injectable({
@@ -13,7 +14,9 @@ export class UsuarioService {
 
   ) { }
   getUsuarios(){
-    //return throwError(new Error('Erro normal'));
+  /* const error = throwError('Error Normal');
+   return timer(3000).pipe(mergeMap(()=>error)); */
+   
 
     return this.http.get<Usuario[]>('http://localhost:3000/usuario');
   }
