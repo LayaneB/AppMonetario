@@ -33,4 +33,18 @@ export class UsuarioService {
 
     }
 
+    createUsuario(usuario:Usuario){
+      return this.http.post<Usuario>('https://my-json-server.typicode.com/KellYCarvalho/apiFake/usuario',usuario);
+
+    }
+    updateUsuario(usuario:Usuario,id:string){
+      return this.http.put<Usuario>('https://my-json-server.typicode.com/KellYCarvalho/apiFake/usuario/'+id,usuario);
+
+    }
+
+    deleteUsuario(id:string){
+             return this.http.delete<Usuario>('https://my-json-server.typicode.com/KellYCarvalho/apiFake/usuario/'+id);
+
+    }
+
 }
