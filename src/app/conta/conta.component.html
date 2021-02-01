@@ -1,1 +1,27 @@
-<p>conta works!</p>
+<div *ngIf="loading" class="spinner-border m-5" role="status">
+    <span class="visually-hidden">Loading...</span>
+    <button (click)="getConta()" >Tentar Novamente</button>
+  </div>
+  <div *ngIf="!loading && !errorOnLoading">
+    <p>Pagina Atual: {{page}}</p>
+    <button [disabled]="page===1" (click)="prev()" >Página Anterior</button>
+    <button (click)="next()" >Próxima Página</button>
+  </div>
+
+
+
+  <h2 *ngIf="errorOnLoading" >Desculpa te decepcionar, mas ocorreu um erro :(</h2>
+  <table *ngIf="!loading && !errorOnLoading" >
+      <tr>
+          <th>ID</th>
+          <th>NOME</th>
+          <th>CPF</th>
+
+      </tr>
+      <tr *ngFor="let contas of conta">
+        <td>{{contas.id}}</td>
+        <td>{{contas.saldo}}</td>
+        <td> {{contas.idUsuario}} </td>
+      </tr>
+      
+  </table>

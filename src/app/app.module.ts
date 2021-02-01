@@ -8,12 +8,14 @@ import{AppRoutingModule} from './app-routing/app-routing.component';
 import { FormsModule } from '@angular/forms';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     ContaComponent,
     CadastroUsuarioComponent,
     UsuarioComponent,
+    HomeComponent,
     
   ],
   imports: [

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { finalize, take } from 'rxjs/operators';
 import { ContaService } from '../conta.service';
+import { Conta } from './conta.interfaces';
 
 @Component({
   selector: 'app-conta',
@@ -9,28 +11,64 @@ import { ContaService } from '../conta.service';
 })
 export class ContaComponent implements OnInit {
 
-   conta =[];
-   usuario=[];
-   usuarioCriado=[
+   conta :Array<Conta>
+   page=1;
+   loading:boolean;
+   errorOnLoading:boolean;
+   
 
-   ];
-
-   str:string;
+ 
   constructor(
     private http:ContaService
   ) { }
 
   ngOnInit() {
-    this.getUsuarios();
+    this.getConta();
  }
+ prev(){
+  this.page=this.page-1;
+  this.getConta();
 
- getUsuarios(){
-  this.http.getUsuarios()
-  .subscribe(response =>{
-    this.usuario.push(response);
-    console.log(this.usuario);
-  })
+}
+next(){
+  this.page=this.page+1;
+  this.getConta();
+
+
+}
+
+ getConta(){
+   this.loading=true;
+   this.errorOnLoading=false;
+
+   this.http.getContas(this.page)
+   .pipe(
+     take(1),
+     finalize(()=>{
+       this.loading=false;
+     })
+   )
+   .subscribe(
+     response=>this.onSuccess(response),
+     error=>this.onError(error(),
+     )
+     
+     
+   )
  }
+ onError(error:any) {
+    
+  this.errorOnLoading=true;
+  console.log(error);
+
+    
+}
+onSuccess(response:Conta[]) {
+this.conta=response;
+console.log(response);
+}
+
+
 
 
  

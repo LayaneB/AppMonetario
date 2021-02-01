@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Conta } from './conta/conta.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -14,38 +15,13 @@ export class ContaService {
     private http: HttpClient
     ) { }
 
-    getUsuarios(){
-      return this.http.get('http://localhost:3000/usuario');
+    getContas(page:number){
+      return this.http.get<Conta[]>('https://my-json-server.typicode.com/KellYCarvalho/apiFake/contas',{
+      params:{
+        _page: String(page),
+      }
+    });
     }
 
-    getUsuario(id){
-      return this.http.get(' http://localhost:3000/usuario/'+id);
-
-    }
-    getContas(){
-      return this.http.get(' http://localhost:3000/contas');
-
-    }
-    getConta(id){
-      return this.http.get(' http://localhost:3000/contas/'+id);
-
-    }
-
-    createUsuario(id:string, usuario){
-  
-      
-      return this.http.post(' http://localhost:3000/contas',usuario);
-
-    }
-
-    updateUsuario(id:string,usuario){
-      return this.http.put(' http://localhost:3000/contas/'+id,usuario);
-
-
-    }
-    deleteUsuario(id){
-      return this.http.get(' http://localhost:3000/usuario/'+id);
-
-    }
-
+   
 }
