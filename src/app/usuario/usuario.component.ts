@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
 import { Usuario } from './usuario.interfaces';
-import{finalize, mergeMap} from 'rxjs/operators';
+import{finalize, mergeMap, take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-usuario',
@@ -42,8 +42,10 @@ export class UsuarioComponent implements OnInit {
   
   this.http.getUsuarios()
   .pipe(
+    take(1),
     finalize(()=>{
       this.loading=false;
+    
 
     })
   )
