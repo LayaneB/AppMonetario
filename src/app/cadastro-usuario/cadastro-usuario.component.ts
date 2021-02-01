@@ -45,5 +45,8 @@ this.loading=false;
     console.log('Tudo certo!',this.novoUsuario);
     this.router.navigate(['usuario']);
   }
+onSuccessDelete(id){
+  console.log("apagado com sucesso!: "+id);
+}
 
 }

@@ -84,4 +84,17 @@ this.usuario=response;
   
 
   }
+  deletar(id){
+    this.http.deleteUsuario(id)
+    .subscribe(
+      response => this.onSuccessDelete(id),
+      error => this.OnError(error),
+    )
+  }
+  onSuccessDelete(id){
+    console.log("apagado com sucesso!: "+id);
+  }
+  OnError(error: any){
+    console.log(error);
+  }
 }
