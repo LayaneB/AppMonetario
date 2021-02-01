@@ -14,14 +14,16 @@
   <table *ngIf="!loading && !errorOnLoading" >
       <tr>
           <th>ID</th>
-          <th>NOME</th>
-          <th>CPF</th>
+          <th>SALDO</th>
+          <th>ID_USUÁRIO</th>
 
       </tr>
       <tr *ngFor="let contas of conta">
         <td>{{contas.id}}</td>
         <td>{{contas.saldo}}</td>
         <td> {{contas.idUsuario}} </td>
+        <td><button (click)="goToDetails(contas.id)" >Ver Detalhes</button></td>
+
       </tr>
       
   </table>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { finalize, take } from 'rxjs/operators';
 import { ContaService } from '../conta.service';
 import { Conta } from './conta.interfaces';
@@ -19,7 +20,8 @@ export class ContaComponent implements OnInit {
 
  
   constructor(
-    private http:ContaService
+    private http:ContaService,
+    private route:Router
   ) { }
 
   ngOnInit() {
@@ -68,7 +70,9 @@ this.conta=response;
 console.log(response);
 }
 
-
+goToDetails(idConta:string){
+  this.route.navigate([`conta/${idConta}`])
+}
 
 
  

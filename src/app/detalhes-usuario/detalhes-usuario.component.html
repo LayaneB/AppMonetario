@@ -1,4 +1,8 @@
 <h1>Informações</h1>
+<div *ngIf="loading" class="spinner-border m-5" role="status">
+    <span class="visually-hidden">Loading...</span>
+    <button (click)="getUsuario()" >Tentar Novamente</button>
+  </div>
 <div>
     <div>Usuário: {{usuario.nome}}</div>
  

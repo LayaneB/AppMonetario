@@ -23,5 +23,9 @@ export class ContaService {
     });
     }
 
+    getConta(id:string){
+      return this.http.get<Conta>('https://my-json-server.typicode.com/KellYCarvalho/apiFake/contas/')
+    }
+
    
 }

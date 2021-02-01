@@ -26,6 +26,8 @@ onErrorLoading:boolean;
     this.getUsuario(idUsuario);
   }
   getUsuario(idUsuario){
+    this.loading=true;
+    this.onErrorLoading=false;
 
     this.http.getUsuario(idUsuario)
     .subscribe(
@@ -37,6 +39,7 @@ onErrorLoading:boolean;
   }
   onSucess(response: Usuario) {
     this.usuario=response;
+    this.loading=false;
   }
   onError(error: any) {
 
