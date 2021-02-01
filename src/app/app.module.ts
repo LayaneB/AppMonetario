@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { DetalhesUsuarioComponent } from './detalhes-usuario/detalhes-usuario.component';
 import { DetalhesContaComponent } from './detalhes-conta/detalhes-conta.component';
 import { LoginComponent } from './login/login.component';
+import { CadastroContaComponent } from './cadastro-conta/cadastro-conta.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { LoginComponent } from './login/login.component';
     DetalhesUsuarioComponent,
     DetalhesContaComponent,
     LoginComponent,
+    CadastroContaComponent,
     
   ],
   imports: [
