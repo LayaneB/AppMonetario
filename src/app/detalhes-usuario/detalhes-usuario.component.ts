@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalhes-usuario',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalhesUsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
 
-  ngOnInit(): void {
+    private route:ActivatedRoute
+  ) { }
+
+  ngOnInit() {
+    this.getParametros();
+  }
+  getParametros(){
+    const idUsuario = this.route.snapshot.paramMap.get('id');
+    console.log("Estou mostrando um parametro: "+idUsuario);
   }
 
 }

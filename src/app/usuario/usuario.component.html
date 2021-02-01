@@ -17,12 +17,14 @@
           <th>ID</th>
           <th>NOME</th>
           <th>CPF</th>
+          <th>AÇÕES</th>
 
       </tr>
       <tr *ngFor="let usuarios of usuario">
         <td>{{usuarios.id}}</td>
         <td>{{usuarios.nome}}</td>
         <td> {{usuarios.cpf}} </td>
+        <td><button (click)="goToDetails(usuarios.id)" >Ver Detalhes</button></td>
       </tr>
       
   </table>

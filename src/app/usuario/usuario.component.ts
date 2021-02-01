@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
 import { Usuario } from './usuario.interfaces';
 import{finalize, mergeMap, take} from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuario',
@@ -21,7 +22,8 @@ page=1;
  
   
   constructor(
-    private http:UsuarioService
+    private http:UsuarioService,
+    private router:Router
     ) {
 
      }
@@ -76,5 +78,10 @@ page=1;
 this.usuario=response;
   }
 
+  goToDetails(idUsuario:string){
 
+    this.router.navigate([`usuario/${idUsuario}`]);
+  
+
+  }
 }
