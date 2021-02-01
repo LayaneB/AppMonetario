@@ -11,6 +11,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { HomeComponent } from './home/home.component';
 import { DetalhesUsuarioComponent } from './detalhes-usuario/detalhes-usuario.component';
 import { DetalhesContaComponent } from './detalhes-conta/detalhes-conta.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { DetalhesContaComponent } from './detalhes-conta/detalhes-conta.componen
     HomeComponent,
     DetalhesUsuarioComponent,
     DetalhesContaComponent,
+    LoginComponent,
     
   ],
   imports: [
