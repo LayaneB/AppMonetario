@@ -3,6 +3,7 @@
         id:number,
         nome:string,
         cpf:string,
-        senha:string
+        senha:string,
+        email:string
       };
 

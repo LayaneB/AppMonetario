@@ -9,7 +9,7 @@ import { Usuario } from '../usuario/usuario.interfaces';
   styleUrls: ['./detalhes-usuario.component.css']
 })
 export class DetalhesUsuarioComponent implements OnInit {
-usuario:Array<Usuario>
+usuario:Usuario;
 loading:boolean;
 onErrorLoading:boolean;
   constructor(
@@ -36,7 +36,7 @@ onErrorLoading:boolean;
     )
   }
   onSucess(response: Usuario) {
-    
+    this.usuario=response;
   }
   onError(error: any) {
 
