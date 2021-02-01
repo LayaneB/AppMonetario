@@ -1,12 +1,22 @@
-<h1>Usuário</h1>
-<div *ngFor="let usuarios of usuario">
-    <ul>
-        <li>
-     {{usuarios.nome}}
-        </li>
-     
-     
-     </ul>
-     
-     
-</div>
+
+<div *ngIf="loading" class="spinner-border m-5" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+  <h2 *ngIf="errorOnLoading" >Desculpa te decepcionar, mas ocorreu um erro :(</h2>
+  <table *ngIf="!loading && !errorOnLoading" >
+      <tr>
+          <th>ID</th>
+          <th>NOME</th>
+          <th>CPF</th>
+
+      </tr>
+      <tr *ngFor="let usuarios of usuario">
+        <td>{{usuarios.id}}</td>
+        <td>{{usuarios.nome}}</td>
+        <td> {{usuarios.cpf}} </td>
+      </tr>
+      
+  </table>
+
+

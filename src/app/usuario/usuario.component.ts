@@ -11,6 +11,9 @@ export class UsuarioComponent implements OnInit {
 
   usuario: Array<Usuario>
 
+  loading:boolean;
+  errorOnLoading:boolean;
+
   
   
    
@@ -29,13 +32,21 @@ export class UsuarioComponent implements OnInit {
 
 
  getUsuarios(){
+
+
+    this.loading=true;
+    this.errorOnLoading=false;
+
+   
+  
   this.http.getUsuarios()
   .subscribe(response =>{
  
       this.usuario=response;
-    
-    
-    console.log(this.usuario);
+      this.loading=false
+  },error=>{
+this.errorOnLoading=true;
+this.loading=false;
   })
  }
 }
